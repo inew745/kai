@@ -21,7 +21,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '18'
 
       - name: Install dependencies
         working-directory: web
@@ -32,6 +32,7 @@ jobs:
         env:
           REACT_APP_HF_TOKEN: ${{ secrets.HF_TOKEN }}
           CI: false
+          NODE_OPTIONS: --openssl-legacy-provider --max_old_space_size=4096
         run: npm run build
 
       - name: Upload build artifact

@@ -1,0 +1,9 @@
+{
+  "buildCommand": "cd web && npm install --legacy-peer-deps && npm run build",
+  "outputDirectory": "web/build",
+  "installCommand": "echo 'skip root install'",
+  "framework": null,
+  "env": {
+    "NODE_OPTIONS": "--openssl-legacy-provider"
+  }
+}
